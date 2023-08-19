@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/Inter-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Inter-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ButtonNumber.tres" type="Theme" id=3]
+[ext_resource path="res://Keypad.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 86
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 51
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[node name="Popup" type="Popup"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 139.0
+margin_top = 664.0
+margin_right = 677.0
+margin_bottom = 1139.0
+columns = 3
+
+[node name="one_num" type="Button" parent="GridContainer"]
+margin_right = 177.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "1"
+
+[node name="two_num" type="Button" parent="GridContainer"]
+margin_left = 181.0
+margin_right = 358.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "2"
+
+[node name="three_num" type="Button" parent="GridContainer"]
+margin_left = 362.0
+margin_right = 538.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "3"
+
+[node name="four_num" type="Button" parent="GridContainer"]
+margin_top = 120.0
+margin_right = 177.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "4"
+
+[node name="five_num" type="Button" parent="GridContainer"]
+margin_left = 181.0
+margin_top = 120.0
+margin_right = 358.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "5"
+
+[node name="six_num" type="Button" parent="GridContainer"]
+margin_left = 362.0
+margin_top = 120.0
+margin_right = 538.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "6"
+
+[node name="seven_num" type="Button" parent="GridContainer"]
+margin_top = 240.0
+margin_right = 177.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "7"
+
+[node name="eight_button" type="Button" parent="GridContainer"]
+margin_left = 181.0
+margin_top = 240.0
+margin_right = 358.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "8"
+
+[node name="nine_button" type="Button" parent="GridContainer"]
+margin_left = 362.0
+margin_top = 240.0
+margin_right = 538.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "9"
+
+[node name="zero_button" type="Button" parent="GridContainer"]
+margin_top = 360.0
+margin_right = 177.0
+margin_bottom = 475.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "0"
+
+[node name="dash_button" type="Button" parent="."]
+margin_left = 505.0
+margin_top = 511.0
+margin_right = 677.0
+margin_bottom = 622.0
+theme = SubResource( 2 )
+text = "-"
+
+[node name="del_button" type="Button" parent="."]
+margin_left = 533.0
+margin_top = 1055.0
+margin_right = 678.0
+margin_bottom = 1137.0
+theme = SubResource( 4 )
+text = "del"
+
+[connection signal="pressed" from="GridContainer/one_num" to="." method="_on_one_num_pressed"]
+[connection signal="pressed" from="GridContainer/two_num" to="." method="_on_two_num_pressed"]
+[connection signal="pressed" from="GridContainer/three_num" to="." method="_on_three_num_pressed"]
+[connection signal="pressed" from="GridContainer/four_num" to="." method="_on_four_num_pressed"]
+[connection signal="pressed" from="GridContainer/five_num" to="." method="_on_five_num_pressed"]
+[connection signal="pressed" from="GridContainer/six_num" to="." method="_on_six_num_pressed"]
+[connection signal="pressed" from="GridContainer/seven_num" to="." method="_on_seven_num_pressed"]
+[connection signal="pressed" from="GridContainer/eight_button" to="." method="_on_eight_button_pressed"]
+[connection signal="pressed" from="GridContainer/nine_button" to="." method="_on_nine_button_pressed"]
+[connection signal="pressed" from="GridContainer/zero_button" to="." method="_on_zero_button_pressed"]
+[connection signal="pressed" from="dash_button" to="." method="_on_dash_button_pressed"]
+[connection signal="pressed" from="del_button" to="." method="_on_del_button_pressed"]

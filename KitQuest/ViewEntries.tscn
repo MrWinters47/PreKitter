@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ViewEntries.gd" type="Script" id=1]
+[ext_resource path="res://Art/BG-temp.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bg-temp" type="Sprite" parent="."]
+position = Vector2( 400, 640 )
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="Bg-temp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -400.0
+margin_top = -640.0
+margin_right = -400.0
+margin_bottom = -640.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Bg-temp/Control"]
+margin_left = 23.0
+margin_top = 39.0
+margin_right = 769.0
+margin_bottom = 1243.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bg-temp/Control/ScrollContainer"]
+
+[node name="ViewEntries_Button" type="Button" parent="Bg-temp/Control"]
+margin_left = 181.0
+margin_top = 1055.0
+margin_right = 638.0
+margin_bottom = 1175.0
+text = "View Entries"
+
+[connection signal="pressed" from="Bg-temp/Control/ViewEntries_Button" to="." method="_on_ViewEntries_Button_pressed"]
